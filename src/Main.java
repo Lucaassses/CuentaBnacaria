@@ -1,15 +1,36 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+//Lucas Rodriguez España
+
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Scanner ingresar = new Scanner(System.in);
+        Cuenta cu = new Cuenta();
+        cu.getDniCliente();
+        cu.getNumeroCuenta();
+        cu.getSaldo();
+        cu.getTipoCuenta();
+        cu.setTipoCuenta(cu.getTipoCuenta());
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+
+
+        ingresar = new Scanner(System.in);
+        System.out.println("Ingrese el DNI del cliente: ");
+
+        String dni = ingresar.nextLine() ;
+        System.out.println("Ingrese el saldo inicial: ");
+
+        Double saldo = ingresar.nextDouble();
+        System.out.println("Ingrese el numero de cuenta: ");
+
+        String numeroCuenta = ingresar.nextLine();
+        System.out.println("Ingrese el tipo de cuenta Ahorros/Corriente: ");
+
+        String tipoCuenta = ingresar.next();
+
+        cu.consultarDatos();
+
     }
+
+
 }
